@@ -1,0 +1,229 @@
+/*****************/
+/* Setup section */
+/*****************/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #143d59;
+    --secondary-color: grey;
+    --tertiary-color: rgb(242, 241, 241);
+
+    --ff-primary: "Noto Sans JP", sans-serif;
+
+    --box-shadow-heavy: 0 4px 8px 0 rgba(0, 0, 0, 0.9),
+        0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    --box-shadow-light: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --box-shadow-left-to-right: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: var(--ff-primary);
+    color: var(--secondary-color);
+}
+
+.App {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.app-container {
+    margin: 0 auto;
+    width: 375px;
+    height: 667px;
+    /* width: 100vw; */
+    /* height: 100vh; */
+
+    background: var(--tertiary-color);
+    box-shadow: var(--box-shadow-light);
+}
+
+/*****************/
+/* HEADER        */
+/*****************/
+h1 {
+    margin: auto;
+    text-align: center;
+}
+
+.header-container {
+    border-bottom: 3px solid rgba(128, 128, 128, 0.3);
+    box-shadow: var(--box-shadow-left-to-right);
+    margin: 0 auto;
+    width: 100%;
+    color: grey;
+    margin-bottom: 0;
+}
+
+.header-score-through {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+.fa-times {
+    color: red;
+    position: relative;
+    left: -192px;
+    top: 5px;
+    font-size: 1.5em;
+}
+
+.fa-circle {
+    font-size: 0.6em;
+    opacity: 0.5;
+}
+
+/*****************/
+/* TASKLIST      */
+/*****************/
+.tasks-header {
+    margin: 0;
+    border-top: 3px solid green;
+    border-bottom: 3px solid green;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.1em 0.3em;
+    width: 100%;
+}
+
+.tasklist-container {
+    margin: 1em auto;
+    height: 40%;
+    overflow: auto;
+}
+
+.task-container {
+    width: 90%;
+    margin: 1em auto;
+    text-align: left;
+    padding-left: 1em;
+    padding-right: 3em;
+    white-space: nowrap;
+    background: white;
+    padding-top: 0.2em;
+    box-shadow: var(--box-shadow-left-to-right);
+}
+
+.task-container:focus-within {
+    border: 3px dashed rgba(23, 147, 52, 0.6);
+}
+
+.task-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 0;
+    outline: none;
+    width: 100%;
+    margin: 0.5em 0.5em;
+}
+
+/**********************/
+/* COMPLETED TASKLIST */
+/**********************/
+.completed-tasklist-container {
+    margin: 1em auto;
+    overflow: auto;
+    height: 30%;
+}
+
+.completed-task {
+    background: orange;
+}
+
+.completed-task-container {
+    text-align: left;
+}
+
+.completed-task-description {
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    padding-left: 0.8em;
+}
+
+.fa-trash-alt {
+    cursor: pointer;
+    padding-left: 1em;
+}
+
+/*****************/
+/* FOOTER        */
+/*****************/
+.footer-container {
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}
+
+.add-new-button {
+    box-shadow: var(--box-shadow-light);
+    width: fit-content;
+    padding: 1em;
+    cursor: pointer;
+}
+
+/******************/
+/* Round checkbox */
+/******************/
+.round {
+    position: relative;
+}
+
+.round label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 18px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 18px;
+}
+
+.round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 2px;
+    opacity: 0;
+    position: absolute;
+    top: 4px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+
+.round input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+/* Position green checkbox circle to the right and middle of row */
+.radio-label {
+    margin-left: 90%;
+    margin-top: 0.4em;
+}
