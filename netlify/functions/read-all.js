@@ -5,7 +5,7 @@ const uri = process.env.MONGO_DB_URI;
 
 exports.handler = async function (event, context) {
     const client = await mongodb.connect(`mongodb+srv://${username}:${password}@${uri}?retryWrites=true&w=majority`, { useUnifiedTopology: true })
-    const db = client.db()
+    const db = client.db("tasks_hub")
 
     try {
         const tasks = await db.collection("tasks")
