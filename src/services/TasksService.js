@@ -2,6 +2,7 @@
 
 // user below for localhost
 // const baseURL = 'http://localhost:5000/api/tasks/'
+// const baseURL = 'http://localhost:8080/'
 
 // use below for connecting to backend on Heroku
 // const baseURL = "https://my-not-todo-list-backend.herokuapp.com/api/tasks/"
@@ -37,9 +38,10 @@ const TasksService = {
 
     updateTask(payload) {
         return fetch(baseURL + "update/" + payload._id, {
-            method: 'PUT',
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
-            headers: { 'Content-Type': 'application/json' }
+
         })
             .then(res => res.json())
     }

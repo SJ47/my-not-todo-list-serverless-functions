@@ -1,9 +1,10 @@
 const mongodb = require("mongodb")
 const username = process.env.MONGO_DB_USER;
 const password = process.env.MONGO_DB_PASSWORD;
+const uri = process.env.MONGO_DB_URI;
 
 exports.handler = async function (event, context) {
-    const client = await mongodb.connect(`mongodb+srv://${username}:${password}@cluster0.ugqf0.mongodb.net/tasks_hub?retryWrites=true&w=majority`, { useUnifiedTopology: true })
+    const client = await mongodb.connect(`mongodb+srv://${username}:${password}@${uri}?retryWrites=true&w=majority`, { useUnifiedTopology: true })
     const db = client.db()
 
     try {

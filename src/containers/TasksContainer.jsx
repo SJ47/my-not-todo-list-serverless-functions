@@ -24,9 +24,9 @@ const TasksContainer = () => {
                 }
                 return task;
             });
-            setTimeout(() => {
-                setTasks(updatedTasks);
-            }, 200);
+            // setTimeout(() => {
+            setTasks(updatedTasks);
+            // }, 200);
         });
     };
 
