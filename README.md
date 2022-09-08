@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/285757da-9b90-49f6-87f8-131e50dece42/deploy-status)](https://app.netlify.com/sites/zen-hugle-dc7c2b/deploys)
+
 # My Not ToDo List
 
 # Brief
