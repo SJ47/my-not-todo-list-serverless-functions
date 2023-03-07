@@ -10,7 +10,7 @@
         "aws-sdk": "^2.1209.0",
         "axios": "^0.21.1",
         "mongodb": "^3.6.6",
-        "netlify-cli": "^2.71.0",
+        "netlify-cli": "^13.0.1",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
         "uuid": "^9.0.0"
